@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Muli", sans-serif;
+  background-color: #8f57fd;
+}
+
+.header {
+  align-items: center;
+  background-color: #21c08b;
+  color: white;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  top: 0px;
+  width: 100%;
+}
+.header__img {
+  margin-left: 30px;
+  margin-top: 10px;
+  width: 100px;
+}
+.login {
+  background: linear-gradient(#21c08b, #ab88ff); /*degrada de verde a morado*/
+  display: flex; /*ubicar componentes*/
+  align-items: center; /*alinear*/
+  justify-content: center; /*alinear de forma orizontal*/
+  flex-direction: column; /*ccentrarlo*/
+  padding: 0px 30px; /*padding de arriba y alto*/
+  min-height: calc(100vh - 200px); /*vh(es el porcentaje que ve el usuario) */
+}
+.login__container {
+  background-color: rgba(255, 255, 255, 0.1); /*color blanco transparente*/
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  padding: 60px 68px 40px; /* */
+  min-height: 700px; /*para que se haga grande o alto*/
+  width: 300px; /*ancho*/
+  display: flex;
+  justify-content: space-around; /*alinear elemntos*/
+  flex-direction: column;
+}
+.login__container--form {
+  display: flex;
+  flex-direction: column; /*los pone en columna*/
+}
+
+.login__container--register {
+  font-size: 14px;
+  text-align: center;
+}
+.login__container--register a {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login__container--register a:hover {
+  text-decoration: underline;
+  align-items: flex-start;
+}
+.input {
+  background-color: transparent;
+  border-left: 0px; /*quita los bordes*/
+  border-top: 0px; /*quita los bordes*/
+  border-right: 0px; /*quita los bordes*/
+  border-bottom: 2px solid white; /*solo se vera el borde de abajo*/
+  font-family: "Muli", sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  outline: none;
+  height: 50px;
+}
+
+::placeholder {
+  color: white;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: "Muli", sans-serif;
+  height: 50px;
+  letter-spacing: 1px; /*lo separa */
+  margin: 10px 0px;
+}
+
+.footer {
+  background-color: #ab88ff;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,116 @@
+body {
+  background: #8f57fd;
+}
+
+.header__img {
+  margin-left: 30px;
+  width: 200px;
+}
+
+.error__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  min-height: calc(100vh - 200px);
+}
+.error__container--tittle {
+  width: 100%;
+  height: 300px;
+  float: left;
+  overflow: hidden;
+}
+.text-bounce {
+  text-align: center;
+  margin-top: 56px;
+  color: #fff;
+  font-size: 10em;
+  text-transform: uppercase;
+}
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.bounce {
+  animation-name: bounce;
+}
+.error__container p {
+  margin-top: -60px;
+}
+/* para animacion de puslo
+.box {
+  width: 160px;
+  height: 120px;
+  float: left;
+  background: violet;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
+.text {
+  text-align: center;
+  margin-top: 56px;
+  color: #fff;
+  font-size: 1em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.pulse {
+  animation-name: pulse;
+  animation-d uration: 1s;
+}
+*/
+.footer {
+  align-items: center;
+  background-color: #8f57fd;
+  display: flex;
+  height: 100px;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
