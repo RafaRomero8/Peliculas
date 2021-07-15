@@ -1,0 +1,282 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Muli", sans-serif;
+  background-color: #8f57fd;
+}
+
+/*Para los que se hayan confundido o quieran saber la diferencia entre extend y el include es la siguiente:
+Los Mixins de Sass, hacen algo parecido a lo que hemos visto con Extend. Encapsulan varias líneas de código que posteriormente podemos llamar dentro de un selector.
+Sin embargo, los Mixins incorporan una novedad. Permiten pasarles un argumento que podrá tener un valor distinto cada vez que lo usemos.
+Me explico. Los Mixins se crean de la siguiente manera:
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+-moz-border-radius: $radius;
+-ms-border-radius: $radius;
+border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }*/
+/*
+para heredar ponemos una clase con nombre cualquiera
+y con las propiedades qeu vamos a utilizar
+
+.flex{
+  display:flex;
+  align-items:center;
+  ...
+
+}
+*/
+header {
+  /*para heredar de la clase .flex utilizamos la siguiente sintaxis
+
+  @extend.flex; (<------- así,utiliza display:flex; y
+  align-items:center; y se quitael display y align)
+  
+  */
+  /*#21c08b*/
+  width: 100%;
+  height: 80px;
+  /*opacity: 0.4; opaca el color*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /*coloca los elementos a los lados dejando un espacio a los lados */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*para que los alinie de forma vertical*/
+}
+
+.header__img {
+  width: 20rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.header__menu {
+  margin-right: 3rem;
+}
+
+.header__menu--profile {
+  margin-right: 8px;
+  /*entre la imagen y texto*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*para que se alinie el icono y la letra*/
+}
+
+.header__menu--profile img {
+  margin-right: 8px;
+  width: 40px;
+}
+
+.header__menu--profile p {
+  color: white;
+}
+
+.header__menu ul {
+  display: none;
+  /*para que no se muestre  amenos que pongamos un hover y display:block como abajo*/
+  list-style: none;
+  position: absolute;
+  width: 100px;
+  text-align: right;
+  margin: -14px;
+}
+
+.header__menu:hover ul,
+ul:hover {
+  display: block;
+  /*para que se muestren*/
+}
+
+.header__menu li {
+  margin: 10px 0px;
+  /*anidar para reutilizar codigo ejemplo
+  a {
+      color: white;
+  text-decoration: none;
+
+  es lo mismo que en las lineas de abajo
+  }*/
+}
+
+.header__menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.header__menu li a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main__title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.categories__title {
+  font-size: 1.6rem;
+  color: white;
+  position: absolute;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.input {
+  border: 2px solid white;
+  border-radius: 2.5rem;
+  color: white;
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+  height: 50px;
+  padding: 20px;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.1);
+  /*transparencia del buscador*/
+  outline: none;
+  /*Outline se refiere al borde que aparece alrededor del cuadro input cuando interactuas con este. En este caso utilizamos outline: none; para quitar ese borde.*/
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+::-ms-input-placeholder {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+.carousel {
+  width: 100%;
+  overflow: scroll;
+  padding: 30px;
+  position: relative;
+  /*todos los elementos que esten dentro se van a possicionar en relacion al elemento*/
+}
+
+.carousel::-webkit-scrollbar {
+  width: 8px;
+  /* Tamaño del scroll en vertical */
+  height: 8px;
+  /* Tamaño del scroll en horizontal */
+  display: none;
+  /* Ocultar scroll */
+}
+
+.carousel__conteiner {
+  white-space: nowrap;
+  /*lo pone e*/
+  margin: 70px 0px;
+  /*espacio entre el elemento antes de hacer el hover*/
+  padding-bottom: 10px;
+  /**/
+}
+
+.carousel-item {
+  background-color: turquoise;
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  /**/
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  /*pone la manita en ves de la felchita*/
+  -webkit-transition: 450ms all;
+  transition: 450ms all;
+  /*para que tarde (es un tiempo) en agrandar */
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  /**/
+  position: relative;
+}
+
+.carousel-item:hover ~ .carousel-item {
+  /*~ El selector ~ de CSS nos permite dar estilos a todos que cumplan los requisitos y sean “hermanos directos”, es decir, que tengan el mismo elemento padre.*/
+  -webkit-transform: translate3d(100px, 0, 0);
+          transform: translate3d(100px, 0, 0);
+  /*los elemntos se desplazan hacia la derecha*/
+}
+
+.carousel__conteiner:hover .carousel-item {
+  opacity: 0.3;
+}
+
+.carousel__conteiner:hover .carousel-item:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  /*incrementa el tamaño*/
+  opacity: 1;
+  /*cuando se agrande siga teniendo la misma luminosidad */
+}
+
+.carousel-item__img {
+  width: 200px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /*para que la imagen recupere su tmaño original*/
+}
+
+.carousel-item__details {
+  background-color: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  /*desvanecido*/
+  font-size: 10px;
+  opacity: 1;
+  -webkit-transition: 450ms opacity;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */
